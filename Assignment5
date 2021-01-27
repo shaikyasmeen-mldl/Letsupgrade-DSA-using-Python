@@ -1,0 +1,95 @@
+#Question 1
+#Name 5 sorting algorithms, also write their time complexities(best, average, worst).
+
+#Sorting Best Average Worst
+#Selection Sort Ω(n^2) θ(n^2) O(n^2) Bubble Sort Ω(n) θ(n^2) O(n^2) Insertion Sor Ω(n) θ(n^2) O(n^2) Heap Sort Ω(n log(n)) θ(n log(n)) O(n log(n)) Quick Sort Ω(n log(n)) θ(n log(n)) O(n^2)
+
+#Question 2
+#Implement selection sort algorithm using Python.|def selectionSort( itemsList ):
+    n = len( itemsList )
+    for i in range( n - 1 ): 
+        minValueIndex = i
+
+        for j in range( i + 1, n ):
+            if itemsList[j] < itemsList[minValueIndex] :
+                minValueIndex = j
+
+        if minValueIndex != i :
+            temp = itemsList[i]
+            itemsList[i] = itemsList[minValueIndex]
+            itemsList[minValueIndex] = temp
+
+    return itemsList
+
+
+el = [21,6,9,33,3]
+
+print(selectionSort(el))
+
+
+
+#Question 3
+#Implement pop operation of the stack
+
+stack = []
+ 
+# append() function to push
+stack.append('a')
+stack.append('b')
+stack.append('c')
+ 
+print('Initial stack')
+print(stack)
+ 
+# pop() fucntion to pop
+print('\nElements poped from stack:')
+print(stack.pop())
+print(stack.pop())
+print(stack.pop())
+ 
+print('\nStack after elements are poped:')
+print(stack)
+
+
+#Question4
+#Implement dequeue operation of the queue
+
+class Deque:
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+
+    def addRear(self, item):
+        self.items.append(item)
+
+    def addFront(self, item):
+        self.items.insert(0, item)
+
+    def removeFront(self):
+        return self.items.pop()
+
+    def removeRear(self):
+        return self.items.pop(0)
+
+    def size(self):
+        return len(self.items)
+
+
+d = Deque()
+print(d.isEmpty())
+d.addRear(8)
+d.addRear(5)
+d.addFront(7)
+d.addFront(10)
+print(d.size())
+print(d.isEmpty())
+d.addRear(11)
+print(d.removeRear())
+print(d.removeFront())
+d.addFront(55)
+d.addRear(45)
+print(d.items)
+
+
